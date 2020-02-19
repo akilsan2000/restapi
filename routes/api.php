@@ -17,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/v1/products', function (Request $request) {
-    return 'From the server: details of two cars';
-});
+Route::get('/v1/products', 'ProductController@get');
+Route::post('/v1/products', 'ProductController@post');
+Route::put('/v1/products', 'ProductController@put');
+Route::delete('/v1/products', 'ProductController@delete');
