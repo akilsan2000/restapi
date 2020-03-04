@@ -1,4 +1,4 @@
-<p align="center"><img src="https://www.1815.ch/site/assets/files/0/76/00/28/907/dsc00446.650x0n.jpg" width="400"></p>
+<p align="center"><img src="https://web-perfect.ch/wp-content/uploads/2018/08/noe.png" width="400"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
