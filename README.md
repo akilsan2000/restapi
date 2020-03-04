@@ -1,4 +1,4 @@
-<p align="center"><img src="https://web-perfect.ch/wp-content/uploads/2018/08/noe.png" width="400"></p>
+<p align="center"><img src="https://www.mengisgruppe.ch/data/Cache/5/55/558/558a/phpThumb_cache_mengisgruppe.ch__src558aae85ef3e33245391fb80553723ed_parf2b0cb66888fd90f47bbc548d38f2b7a_dat1537258457.jpeg" width="400"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
