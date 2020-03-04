@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/v1/products', 'ProductController@get');
 Route::post('/v1/products', 'ProductController@post');
 Route::put('/v1/products', 'ProductController@put');
+Route::patch('/v1/products', 'ProductController@patch');
 Route::delete('/v1/products', 'ProductController@delete');
