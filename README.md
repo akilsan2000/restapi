@@ -1,4 +1,4 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://www.mengisgruppe.ch/data/Cache/5/55/558/558a/phpThumb_cache_mengisgruppe.ch__src558aae85ef3e33245391fb80553723ed_parf2b0cb66888fd90f47bbc548d38f2b7a_dat1537258457.jpeg" width="400"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
