@@ -17,17 +17,8 @@ class ProductController extends Controller
     }
     public function post(Request $request) {
         $product = new Product();
-        $product->name = $request->name;
-        $product->description = $request->description;
-        $product->availability=false;
-        $product->price=0;
-        $product->special_price=0;
-        $product->vegetarian=false;
-        $product->vegan=false;
-        $product->image='';
-        $product->supplier='';
-        $product->article_nr=0;
-        $product->category_id=0;
+        $product->title = $request->name;
+        $product->information = $request->description;
         $product->save();
         return response()->json($product, 200);
     }
