@@ -17,8 +17,23 @@ class ProductController extends Controller
     }
     public function post(Request $request) {
         $product = new Product();
-        $product->title = $request->name;
-        $product->information = $request->description;
+        $product->active = $request->active;
+        $product->article_number = $request->article_number;
+        $product->title = $request->title;
+        $product->summary = $request->summary;
+        $product->information = $request->information;
+        $product->producer_id = $request->producer_id;
+        $product->stock = $request->stock;
+        $product->price = $request->price;
+        $product->season_price = $request->season_price;
+        $product->special_price = $request->special_price;
+        $product->special_price_from = $request->special_price_from;
+        $product->special_price_to = $request->special_price_to;
+        $product->vegetarian = $request->vegetarian;
+        $product->vegan = $request->vegan;
+        $product->calories = $request->calories;
+        $product->categories_id = $request->categories_id;
+        $product->producers_id = $request->producers_id;
         $product->save();
         return response()->json($product, 200);
     }

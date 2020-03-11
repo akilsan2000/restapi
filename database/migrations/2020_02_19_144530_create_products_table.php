@@ -33,7 +33,7 @@ class CreateProductsTable extends Migration
             $table->integer('calories')->nullable($value = true);
             $table->integer('categories_id')->nullable($value = false);
             $table->integer('producers_id')->nullable($value = false);
-            $table->timestamps();
+            $table->timestamps()->nullable($value = true);
         });
     }
 
