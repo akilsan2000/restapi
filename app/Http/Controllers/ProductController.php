@@ -13,28 +13,28 @@ class ProductController extends Controller
 {
     public function get(Request $request) {
         $products = Product::get();
-        return response()->json($products, 200);
+        return response()->json($products, 200,[],JSON_NUMERIC_CHECK);
     }
 
     public function post(Request $request) {
-        $product = new Product();
-        $product->fill($request->all());
-        $product->save();
-        return response()->json($product, 200);
+        $products = new Product();
+        $products->fill($request->all());
+        $products->save();
+        return response()->json($products, 200,[],JSON_NUMERIC_CHECK);
     }
 
     public function put(Request $request) {
-        $product = Product::find($request->id);
-        $product->fill($request->all());
-        $product->save();
-        return response()->json($product, 200);
+        $products = Product::find($request->id);
+        $products->fill($request->all());
+        $products->save();
+        return response()->json($products, 200,[],JSON_NUMERIC_CHECK);
     }
 
     public function patch(Request $request) {
-        $product = Product::find($request->id);
-        $product->fill($request->all());
-        $product->save();
-        return response()->json($product, 200);
+        $products = Product::find($request->id);
+        $products->fill($request->all());
+        $products->save();
+        return response()->json($products, 200,[],JSON_NUMERIC_CHECK);
     }
 
     public function delete(Request $request) {
