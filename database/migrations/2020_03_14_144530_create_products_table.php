@@ -15,13 +15,12 @@ class CreateProductsTable extends Migration
     {
         //https://laravel.com/docs/5.8/migrations#creating-tables
         Schema::create('products', function (Blueprint $table) {
-            $table->bigIncrements('id')->nullable($value = false);
+            $table->bigIncrements('id');
             $table->boolean('active')->nullable($value = true);
             $table->integer('article_number')->nullable($value = true);
             $table->string('title')->nullable($value = true);
             $table->text('summary')->nullable($value = true);
             $table->text('information')->nullable($value = true);
-            $table->integer('producer_id')->nullable($value = true);
             $table->integer('stock')->nullable($value = true);
             $table->double('price')->nullable($value = true);
             $table->double('season_price')->nullable($value = true);
@@ -31,9 +30,14 @@ class CreateProductsTable extends Migration
             $table->boolean('vegetarian')->nullable($value = true);
             $table->boolean('vegan')->nullable($value = true);
             $table->integer('calories')->nullable($value = true);
-            $table->integer('categories_id')->nullable($value = false);
-            $table->integer('producers_id')->nullable($value = false);
+            $table->unsignedInteger('category_id');
+            $table->unsignedInteger('producer_id');
             $table->timestamps();
+        });
+    
+        Schema::table('products', function (Blueprint $table) {
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('producer_id')->references('id')->on('producers');
         });
     }
 
