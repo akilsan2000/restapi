@@ -12,7 +12,6 @@ class Product extends Model
         'title',
         'summary',
         'information',
-        'producer_id',
         'stock',
         'price',
         'season_price',
@@ -20,8 +19,9 @@ class Product extends Model
         'special_price_from',
         'special_price_to',
         'vegetarian',
+        'vegan',
         'calories',
-        'categories_id',
-        'producers_id'
+        'category_id',
+        'producer_id'
     ];
 }

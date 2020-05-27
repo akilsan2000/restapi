@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -12,43 +10,48 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+// https://www.itsolutionstuff.com/post/laravel-6-rest-api-with-passport-tutorialexample.html
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('register', 'API\RegisterController@register')->name('register');
+Route::post('login', 'API\RegisterController@login')->name('login');
+// Header: Accept application/json !!!!
+// Header Authorization Bearer token !!!!
+// GET: http://localhost:8000/api/products/5
+
+Route::middleware('auth:api')->group( function () {
+    Route::get('products', 'API\ProductController@index');
+    Route::get('products/{id}', 'API\ProductController@show');
+    Route::post('products', 'API\ProductController@store');
+    Route::put('products/{id}', 'API\ProductController@update');
+    Route::delete('products/{id}', 'API\ProductController@destroy');
+
+    Route::get('categories', 'API\CategoryController@index');
+    Route::get('categories/{id}', 'API\CategoryController@show');
+    Route::post('categories', 'API\CategoryController@store');
+    Route::put('categories/{id}', 'API\CategoryController@update');
+    Route::delete('categories/{id}', 'API\CategoryController@destroy');
+
+    Route::get('producers', 'API\ProducerController@index');
+    Route::get('producers/{id}', 'API\ProducerController@show');
+    Route::post('producers', 'API\ProducerController@store');
+    Route::put('producers/{id}', 'API\ProducerController@update');
+    Route::delete('producers/{id}', 'API\ProducerController@destroy');
+
+    Route::get('customers', 'API\CustomerController@index');
+    Route::get('customers/{id}', 'API\CustomerController@show');
+    Route::post('customers', 'API\CustomerController@store');
+    Route::put('customers/{id}', 'API\CustomerController@update');
+    Route::delete('customers/{id}', 'API\CustomerController@destroy');
+
+    Route::get('addresses', 'API\AddressController@index');
+    Route::get('addresses/{id}', 'API\AddressController@show');
+    Route::post('addresses', 'API\AddressController@store');
+    Route::put('addresses/{id}', 'API\AddressController@update');
+    Route::delete('addresses/{id}', 'API\AddressController@destroy');
+
+    Route::get('cartitems', 'API\CartitemController@index');
+    Route::get('cartitems/{id}', 'API\CartitemController@show');
+    Route::post('cartitems', 'API\CartitemController@store');
+    Route::put('cartitems/{id}', 'API\CartitemController@update');
+    Route::delete('cartitems/{id}', 'API\CartitemController@destroy');
 });
-
-Route::get('/v1/products', 'ProductController@get');
-Route::post('/v1/products', 'ProductController@post');
-Route::put('/v1/products', 'ProductController@put');
-Route::patch('/v1/products', 'ProductController@patch');
-Route::delete('/v1/products', 'ProductController@delete');
-
-Route::get('/v1/categories', 'CategorieController@get');
-Route::post('/v1/categories', 'CategorieController@post');
-Route::put('/v1/categories', 'CategorieController@put');
-Route::patch('/v1/categories', 'CategorieController@patch');
-Route::delete('/v1/categories', 'CategorieController@delete');
-
-Route::get('/v1/producers', 'ProducerController@get');
-Route::post('/v1/producers', 'ProducerController@post');
-Route::put('/v1/producers', 'ProducerController@put');
-Route::patch('/v1/producers', 'ProducerController@patch');
-Route::delete('/v1/producers', 'ProducerController@delete');
-
-Route::get('/v1/customers', 'CustomerController@get');
-Route::post('/v1/customers', 'CustomerController@post');
-Route::put('/v1/customers', 'CustomerController@put');
-Route::patch('/v1/customers', 'CustomerController@patch');
-Route::delete('/v1/customers', 'CustomerController@delete');
-
-Route::get('/v1/addresses', 'AddressController@get');
-Route::post('/v1/addresses', 'AddressController@post');
-Route::put('/v1/addresses', 'AddressController@put');
-Route::patch('/v1/addresses', 'AddressController@patch');
-Route::delete('/v1/addresses', 'AddressController@delete');
-
-Route::get('/v1/cartitems', 'CartitemController@get');
-Route::post('/v1/cartitems', 'CartitemController@post');
-Route::put('/v1/cartitems', 'CartitemController@put');
-Route::patch('/v1/cartitems', 'CartitemController@patch');
-Route::delete('/v1/cartitems', 'CartitemController@delete');
