@@ -14,7 +14,7 @@ class CreateCartitemsTable extends Migration
     public function up()
     {
         Schema::create('cartitems', function (Blueprint $table) {
-            $table->bigIncrements('id')->nullable($value = false);
+            $table->bigIncrements('id');
             $table->integer('customers_id')->nullable($value = false);
             $table->integer('products_id')->nullable($value = false);
             $table->integer('amount')->nullable($value = true);
